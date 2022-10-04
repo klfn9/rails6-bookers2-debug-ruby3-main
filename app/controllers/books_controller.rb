@@ -6,6 +6,9 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     @book_new = Book.new
+    @comment = Comment.new
+    @comments = @book.comments
+    @favorites_count = Favorite.where(book_id: @book.id).count
   end
 
   def index
