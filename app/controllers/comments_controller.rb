@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     else
       @book_new = Book.new
       @comments = @book.comments
-      redirect_to new_book_path
+      redirect_to request.referer
     end
   end
 
